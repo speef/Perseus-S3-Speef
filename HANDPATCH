@@ -96,6 +96,13 @@ error: patch failed: mm/vmscan.c:726
 error: mm/vmscan.c: patch does not apply
 Patch failed at 0033 vmscan: activate executable pages after first usage
 
--- here --
-
 # Going to 3.0.40
+
+Applying: net/tun: fix ioctl() based info leaks
+error: patch failed: drivers/net/tun.c:1239
+error: drivers/net/tun.c: patch does not apply
+Patch failed at 0039 net/tun: fix ioctl() based info leaks
+
+# Going to 3.0.41
+
+-- here --

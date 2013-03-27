@@ -1,0 +1,23 @@
+
+# Going to 3.0.37
+
+Applying: ARM: fix rcu stalls on SMP platforms
+error: patch failed: arch/arm/kernel/smp.c:445
+error: arch/arm/kernel/smp.c: patch does not apply
+Patch failed at 0004 ARM: fix rcu stalls on SMP platforms
+
+# OK- this patch was in Perseus already.
+
+# Going to 3.0.38
+
+Applying: ARM: SAMSUNG: fix race in s3c_adc_start for ADC
+error: patch failed: arch/arm/plat-samsung/adc.c:143
+error: arch/arm/plat-samsung/adc.c: patch does not apply
+Patch failed at 0005 ARM: SAMSUNG: fix race in s3c_adc_start for ADC
+
+Applying: timekeeping: Maintain ktime_t based offsets for hrtimers
+error: patch failed: kernel/time/timekeeping.c:606
+error: kernel/time/timekeeping.c: patch does not apply
+Patch failed at 0019 timekeeping: Maintain ktime_t based offsets for hrtimers
+
+

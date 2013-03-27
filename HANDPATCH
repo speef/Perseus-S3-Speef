@@ -20,4 +20,82 @@ error: patch failed: kernel/time/timekeeping.c:606
 error: kernel/time/timekeeping.c: patch does not apply
 Patch failed at 0019 timekeeping: Maintain ktime_t based offsets for hrtimers
 
+# Going to 3.0.39
 
+Applying: mm/vmstat.c: cache align vm_stat
+error: patch failed: mm/vmstat.c:78
+error: mm/vmstat.c: patch does not apply
+Patch failed at 0007 mm/vmstat.c: cache align vm_stat
+
+Applying: mm: compaction: make isolate_lru_page() filter-aware
+error: patch failed: mm/vmscan.c:1045
+error: mm/vmscan.c: patch does not apply
+Patch failed at 0019 mm: compaction: make isolate_lru_page() filter-aware
+
+Applying: mm: zone_reclaim: make isolate_lru_page() filter-aware
+error: patch failed: include/linux/mmzone.h:164
+error: include/linux/mmzone.h: patch does not apply
+error: patch failed: mm/vmscan.c:1048
+error: mm/vmscan.c: patch does not apply
+Patch failed at 0020 mm: zone_reclaim: make isolate_lru_page() filter-aware
+
+Applying: mm: compaction: allow compaction to isolate dirty pages
+error: patch failed: mm/compaction.c:371
+error: mm/compaction.c: patch does not apply
+Patch failed at 0022 mm: compaction: allow compaction to isolate dirty pages
+
+Applying: mm: compaction: determine if dirty pages can be migrated without blocking within ->migratepage
+error: patch failed: include/linux/migrate.h:11
+error: include/linux/migrate.h: patch does not apply
+Patch failed at 0023 mm: compaction: determine if dirty pages can be migrated without blocking within ->migratepage
+
+Applying: mm: page allocator: do not call direct reclaim for THP allocations while compaction is deferred
+error: patch failed: mm/page_alloc.c:2095
+error: mm/page_alloc.c: patch does not apply
+Patch failed at 0024 mm: page allocator: do not call direct reclaim for THP allocations while compaction is deferred
+
+Applying: mm: compaction: make isolate_lru_page() filter-aware again
+error: patch failed: include/linux/mmzone.h:166
+error: include/linux/mmzone.h: patch does not apply
+error: patch failed: mm/compaction.c:371
+error: mm/compaction.c: patch does not apply
+error: patch failed: mm/vmscan.c:1045
+error: mm/vmscan.c: patch does not apply
+Patch failed at 0025 mm: compaction: make isolate_lru_page() filter-aware again
+
+Applying: mm: compaction: introduce sync-light migration for use by compaction
+error: patch failed: fs/btrfs/disk-io.c:801
+error: fs/btrfs/disk-io.c: patch does not apply
+error: patch failed: fs/hugetlbfs/inode.c:569
+error: fs/hugetlbfs/inode.c: patch does not apply
+error: patch failed: fs/nfs/internal.h:315
+error: fs/nfs/internal.h: patch does not apply
+error: patch failed: fs/nfs/write.c:1662
+error: fs/nfs/write.c: patch does not apply
+error: patch failed: include/linux/fs.h:612
+error: include/linux/fs.h: patch does not apply
+error: patch failed: include/linux/migrate.h:6
+error: include/linux/migrate.h: patch does not apply
+error: patch failed: mm/memory-failure.c:1464
+error: mm/memory-failure.c: patch does not apply
+error: patch failed: mm/memory_hotplug.c:747
+error: mm/memory_hotplug.c: patch does not apply
+error: patch failed: mm/mempolicy.c:926
+error: mm/mempolicy.c: patch does not apply
+error: patch failed: mm/migrate.c:222
+error: mm/migrate.c: patch does not apply
+Patch failed at 0028 mm: compaction: introduce sync-light migration for use by compaction
+
+Applying: vmscan: promote shared file mapped pages
+error: patch failed: mm/vmscan.c:723
+error: mm/vmscan.c: patch does not apply
+Patch failed at 0032 vmscan: promote shared file mapped pages
+
+Applying: vmscan: activate executable pages after first usage
+error: patch failed: mm/vmscan.c:726
+error: mm/vmscan.c: patch does not apply
+Patch failed at 0033 vmscan: activate executable pages after first usage
+
+-- here --
+
+# Going to 3.0.40

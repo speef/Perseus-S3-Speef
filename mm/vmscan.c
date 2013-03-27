@@ -726,10 +726,6 @@ static enum page_references page_check_references(struct page *page,
 		 */
 		SetPageReferenced(page);
 
-#ifndef CONFIG_DMA_CMA
-		if (referenced_page)
-			return PAGEREF_ACTIVATE;
-#else
 		if (referenced_page || referenced_ptes > 1)
 			return PAGEREF_ACTIVATE;
 
@@ -738,7 +734,6 @@ static enum page_references page_check_references(struct page *page,
 		*/
 		if (vm_flags & VM_EXEC)
 			return PAGEREF_ACTIVATE;
-#endif
 		return PAGEREF_KEEP;
 	}
 
@@ -1057,6 +1052,7 @@ int __isolate_lru_page(struct page *page, isolate_mode_t mode, int file)
 	 * unevictable; only give shrink_page_list evictable pages.
 	 */
 	if (PageUnevictable(page))
+
 #ifndef CONFIG_DMA_CMA
 		return ret;
 #else
@@ -1064,6 +1060,43 @@ int __isolate_lru_page(struct page *page, isolate_mode_t mode, int file)
 					__func__, __LINE__, page);
 #endif
 	ret = -EBUSY;
+
+	/*
+	* To minimise LRU disruption, the caller can indicate that it only
+	* wants to isolate pages it will be able to operate on without
+	* blocking - clean pages for the most part.
+	*
+	* ISOLATE_CLEAN means that only clean pages should be isolated. This
+	* is used by reclaim when it is cannot write to backing storage
+	*
+	* ISOLATE_ASYNC_MIGRATE is used to indicate that it only wants to pages
+	* that it is possible to migrate without blocking
+	*/
+	if (mode & (ISOLATE_CLEAN|ISOLATE_ASYNC_MIGRATE)) {
+		/* All the caller can do on PageWriteback is block */
+		if (PageWriteback(page))
+			return ret;
+	
+		if (PageDirty(page)) {
+			struct address_space *mapping;
+	
+		/* ISOLATE_CLEAN means only clean pages */
+		if (mode & ISOLATE_CLEAN)
+			return ret;
+	
+		/*
+		* Only pages without mappings or that have a
+		* ->migratepage callback are possible to migrate
+		* without blocking
+		*/
+		mapping = page_mapping(page);
+		if (mapping && !mapping->a_ops->migratepage)
+			return ret;
+		}
+	}
+
+	if ((mode & ISOLATE_UNMAPPED) && page_mapped(page))
+		return ret;
 
 	if (likely(get_page_unless_zero(page))) {
 		/*
@@ -1525,6 +1558,12 @@ shrink_inactive_list(unsigned long nr_to_scan, struct zone *zone,
 		reclaim_mode |= ISOLATE_ACTIVE;
 
 	lru_add_drain();
+
+	if (!sc->may_unmap)
+		reclaim_mode |= ISOLATE_UNMAPPED;
+	if (!sc->may_writepage)
+		reclaim_mode |= ISOLATE_CLEAN;
+
 	spin_lock_irq(&zone->lru_lock);
 
 	if (scanning_global_lru(sc)) {
@@ -1680,19 +1719,26 @@ static void shrink_active_list(unsigned long nr_pages, struct zone *zone,
 	struct page *page;
 	struct zone_reclaim_stat *reclaim_stat = get_reclaim_stat(zone, sc);
 	unsigned long nr_rotated = 0;
+	isolate_mode_t reclaim_mode = ISOLATE_ACTIVE;
 
 	lru_add_drain();
+
+	if (!sc->may_unmap)
+		reclaim_mode |= ISOLATE_UNMAPPED;
+	if (!sc->may_writepage)
+		reclaim_mode |= ISOLATE_CLEAN;
+
 	spin_lock_irq(&zone->lru_lock);
 	if (scanning_global_lru(sc)) {
 		nr_taken = isolate_pages_global(nr_pages, &l_hold,
 						&pgscanned, sc->order,
-						ISOLATE_ACTIVE, zone,
+						reclaim_mode, zone,
 						1, file);
 		zone->pages_scanned += pgscanned;
 	} else {
 		nr_taken = mem_cgroup_isolate_pages(nr_pages, &l_hold,
 						&pgscanned, sc->order,
-						ISOLATE_ACTIVE, zone,
+						reclaim_mode, zone,
 						sc->mem_cgroup, 1, file);
 		/*
 		 * mem_cgroup_isolate_pages() keeps track of

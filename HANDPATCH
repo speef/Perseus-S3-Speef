@@ -105,4 +105,17 @@ Patch failed at 0039 net/tun: fix ioctl() based info leaks
 
 # Going to 3.0.41
 
+Applying: mm: fix wrong argument of migrate_huge_pages() in soft_offline_huge_page()
+error: patch failed: mm/memory-failure.c:1464
+error: mm/memory-failure.c: patch does not apply
+Patch failed at 0006 mm: fix wrong argument of migrate_huge_pages() in soft_offline_huge_page()
+
+Applying: usb: feed USB device information to the /dev/random driver
+error: patch failed: drivers/usb/core/hub.c:1902
+error: drivers/usb/core/hub.c: patch does not apply
+Patch failed at 0021 usb: feed USB device information to the /dev/random driver
+
 -- here --
+
+# Going to 3.0.42
+

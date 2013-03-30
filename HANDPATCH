@@ -290,8 +290,6 @@ error: patch failed: drivers/gpu/drm/radeon/radeon_display.c:1158
 error: drivers/gpu/drm/radeon/radeon_display.c: patch does not apply
 Patch failed at 0003 drm/radeon: Calling object_unrefer() when creating fb failure
 
--- here --
-
 # Going to 3.0.64
 
 No hand patches
@@ -312,3 +310,31 @@ error: fs/ext4/super.c: patch does not apply
 Patch failed at 0027 ext4: Free resources in some error path in ext4_fill_super
 
 -> removed some Samsung debug code in addition to linux-kernel patch
+
+# Going to 3.0.68
+
+Applying: cgroup: fix exit() vs rmdir() race
+error: patch failed: kernel/cgroup.c:359
+error: kernel/cgroup.c: patch does not apply
+Patch failed at 0025 cgroup: fix exit() vs rmdir() race
+
+-- here --
+-> This is potentially a whole project; come back to it. Skipped :\
+-- here --
+
+# Going to 3.0.69
+
+No hand patches
+
+# Going to 3.0.70
+
+No hand patches
+
+# Going to 3.0.71
+
+Applying: drm/i915: restrict kernel address leak in debugfs
+error: patch failed: drivers/gpu/drm/i915/i915_debugfs.c:119
+error: drivers/gpu/drm/i915/i915_debugfs.c: patch does not apply
+Patch failed at 0024 drm/i915: restrict kernel address leak in debugfs
+
+-- here --

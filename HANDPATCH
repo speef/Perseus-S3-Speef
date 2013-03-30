@@ -138,4 +138,26 @@ Patch failed at 0027 block: replace __getblk_slow misfix by grow_dev_page fix
 
 # Going to 3.0.44
 
+pplying: ARM: fix bad applied patch for arch/arm/Kconfig of stable 3.0.y tree.
+error: patch failed: arch/arm/Kconfig:1234
+error: arch/arm/Kconfig: patch does not apply
+Patch failed at 0057 ARM: fix bad applied patch for arch/arm/Kconfig of stable 3.0.y tree.
 
+-> This patch was already partially applied to Perseus
+-> Partial patch status maintained; Kconfig for PCMCIA not updated
+
+pplying: time: Move ktime_t overflow checking into timespec_valid_strict
+error: patch failed: kernel/time/timekeeping.c:649
+error: kernel/time/timekeeping.c: patch does not apply
+Patch failed at 0111 time: Move ktime_t overflow checking into timespec_valid_strict
+
+-> This patch was already partially applied to Perseus
+-> Fixed
+
+Applying: mmc: sd: Handle SD3.0 cards not supporting UHS-I bus speed mode
+error: patch failed: drivers/mmc/core/sd.c:306
+error: drivers/mmc/core/sd.c: patch does not apply
+Patch failed at 0117 mmc: sd: Handle SD3.0 cards not supporting UHS-I bus speed mode
+
+-> This patch was mostly applied to Perseus
+-> Changed Perseus's use of hard UHS_SDR50_BUS_SPEED to match value from card.h

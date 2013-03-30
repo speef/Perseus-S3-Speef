@@ -1344,7 +1344,7 @@ config PCI_HOST_ITE8152
 source "drivers/pci/Kconfig"
 
 source "drivers/pcmcia/Kconfig"
-
+ 
 config ARM_ERRATA_764369
 	bool "ARM errata: Data cache line maintenance operation by MVA may not succeed"
 	depends on CPU_V7 && SMP

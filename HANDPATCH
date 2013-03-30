@@ -115,7 +115,6 @@ error: patch failed: drivers/usb/core/hub.c:1902
 error: drivers/usb/core/hub.c: patch does not apply
 Patch failed at 0021 usb: feed USB device information to the /dev/random driver
 
-
 # Going to 3.0.42
 
 Applying: drm/i915: correctly order the ring init sequence
@@ -130,4 +129,13 @@ Patch failed at 0008 xhci: Increase reset timeout for Renesas 720201 host.
 
 # Going to 3.0.43
 
+Applying: block: replace __getblk_slow misfix by grow_dev_page fix
+error: patch failed: fs/buffer.c:983
+error: fs/buffer.c: patch does not apply
+Patch failed at 0027 block: replace __getblk_slow misfix by grow_dev_page fix
+
 -- here --
+
+# Going to 3.0.44
+
+

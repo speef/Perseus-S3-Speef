@@ -115,7 +115,19 @@ error: patch failed: drivers/usb/core/hub.c:1902
 error: drivers/usb/core/hub.c: patch does not apply
 Patch failed at 0021 usb: feed USB device information to the /dev/random driver
 
--- here --
 
 # Going to 3.0.42
 
+Applying: drm/i915: correctly order the ring init sequence
+error: patch failed: drivers/gpu/drm/i915/intel_ringbuffer.c:177
+error: drivers/gpu/drm/i915/intel_ringbuffer.c: patch does not apply
+Patch failed at 0004 drm/i915: correctly order the ring init sequence
+
+Applying: xhci: Increase reset timeout for Renesas 720201 host.
+error: patch failed: drivers/usb/host/xhci.c:172
+error: drivers/usb/host/xhci.c: patch does not apply
+Patch failed at 0008 xhci: Increase reset timeout for Renesas 720201 host.
+
+# Going to 3.0.43
+
+-- here --

@@ -261,4 +261,16 @@ Patch failed at 0001 ARM: 7566/1: vfp: fix save and restore when running on pre-
 -- here --
 # Going to 3.0.58
 
+No hand patches
+
+# Going to 3.0.59
+
+Applying: jbd2: fix assertion failure in jbd2_journal_flush()
+error: patch failed: fs/jbd2/transaction.c:178
+error: fs/jbd2/transaction.c: patch does not apply
+Patch failed at 0033 jbd2: fix assertion failure in jbd2_journal_flush()
+
+-> Remove Samsung patch for race condition, use linux-kernel solution
+
+# Going to 3.0.60
 

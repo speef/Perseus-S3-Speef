@@ -20,8 +20,8 @@ error: patch failed: kernel/time/timekeeping.c:606
 error: kernel/time/timekeeping.c: patch does not apply
 Patch failed at 0019 timekeeping: Maintain ktime_t based offsets for hrtimers
 
-# Going to 3.0.39
 
+<<<<<<< HEAD
 Applying: mm/vmstat.c: cache align vm_stat
 error: patch failed: mm/vmstat.c:78
 error: mm/vmstat.c: patch does not apply
@@ -338,3 +338,5 @@ error: drivers/gpu/drm/i915/i915_debugfs.c: patch does not apply
 Patch failed at 0024 drm/i915: restrict kernel address leak in debugfs
 
 -- here --
+=======
+>>>>>>> parent of a9b5c79... Hand patches needed for 3.0.39 (woof)

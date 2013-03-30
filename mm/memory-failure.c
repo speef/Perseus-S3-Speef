@@ -1477,7 +1477,11 @@ int soft_offline_page(struct page *page, int flags)
 		list_add(&page->lru, &pagelist);
 #ifndef CONFIG_DMA_CMA
 		ret = migrate_pages(&pagelist, new_page, MPOL_MF_MOVE_ALL,
+<<<<<<< HEAD
 								false, MIGRATE_SYNC);
+=======
+								0, true);
+>>>>>>> parent of a9b5c79... Hand patches needed for 3.0.39 (woof)
 #else
 		ret = migrate_pages(&pagelist, new_page, MPOL_MF_MOVE_ALL,
 								0, true, 0);

@@ -175,4 +175,12 @@ Patch failed at 0007 kernel/sys.c: call disable_nonboot_cpus() in kernel_restart
 -> This patch was already applied to Perseus
 
 # Going to 3.0.47
+
+Applying: ARM: 7541/1: Add ARM ERRATA 775420 workaround
+error: patch failed: arch/arm/Kconfig:1260
+error: arch/arm/Kconfig: patch does not apply
+Patch failed at 0007 ARM: 7541/1: Add ARM ERRATA 775420 workaround
+
+# Going to 3.0.48
+
 -- here --

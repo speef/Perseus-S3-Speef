@@ -166,4 +166,13 @@ Patch failed at 0117 mmc: sd: Handle SD3.0 cards not supporting UHS-I bus speed 
 No hand patches for 3.0.45! Woo!
 
 # Going to 3.0.46
+
+Applying: kernel/sys.c: call disable_nonboot_cpus() in kernel_restart()
+error: patch failed: kernel/sys.c:334
+error: kernel/sys.c: patch does not apply
+Patch failed at 0007 kernel/sys.c: call disable_nonboot_cpus() in kernel_restart()
+
+-> This patch was already applied to Perseus
+
+# Going to 3.0.47
 -- here --

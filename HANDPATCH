@@ -205,6 +205,7 @@ error: drivers/usb/host/xhci.h: patch does not apply
 Patch failed at 0030 xHCI: cancel command after command timeout
 
 # Going to 3.0.50
+<<<<<<< HEAD
 
 Applying: genalloc: stop crashing the system when destroying a pool
 error: patch failed: lib/genalloc.c:57
@@ -340,3 +341,5 @@ Patch failed at 0024 drm/i915: restrict kernel address leak in debugfs
 -- here --
 =======
 >>>>>>> parent of a9b5c79... Hand patches needed for 3.0.39 (woof)
+=======
+>>>>>>> parent of d4a1d56... Hand patches for 3.0.50 including commit of standard 3.0.y genalloc.c

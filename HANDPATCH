@@ -206,3 +206,12 @@ Patch failed at 0030 xHCI: cancel command after command timeout
 -- here --
 
 # Going to 3.0.50
+
+Applying: genalloc: stop crashing the system when destroying a pool
+error: patch failed: lib/genalloc.c:57
+error: lib/genalloc.c: patch does not apply
+Patch failed at 0004 genalloc: stop crashing the system when destroying a pool
+
+-> Bring genalloc.c up to 3.0.50 from wherever the hell it was (not 3.0.49!)
+-> xyzzy... this might break stuff. old version @genalloc.c.old
+

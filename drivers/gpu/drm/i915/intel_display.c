@@ -8680,6 +8680,7 @@ static void i830_init_clock_gating(struct drm_device *dev)
 static void ibx_init_clock_gating(struct drm_device *dev)
 {
 	struct drm_i915_private *dev_priv = dev->dev_private;
+	int pipe;
 
 	/*
 	 * On Ibex Peak and Cougar Point, we need to disable clock

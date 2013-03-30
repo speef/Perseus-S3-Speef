@@ -183,4 +183,26 @@ Patch failed at 0007 ARM: 7541/1: Add ARM ERRATA 775420 workaround
 
 # Going to 3.0.48
 
+No hand patches
+
+# Going to 3.0.49
+
+Applying: drm/i915: apply timing generator bug workaround on CPT and PPT
+error: patch failed: drivers/gpu/drm/i915/i915_reg.h:3113
+error: drivers/gpu/drm/i915/i915_reg.h: patch does not apply
+error: patch failed: drivers/gpu/drm/i915/intel_display.c:7584
+error: drivers/gpu/drm/i915/intel_display.c: patch does not apply
+Patch failed at 0018 drm/i915: apply timing generator bug workaround on CPT and PPT
+
+Applying: xHCI: add aborting command ring function
+error: patch failed: drivers/usb/host/xhci.h:1490
+error: drivers/usb/host/xhci.h: patch does not apply
+Patch failed at 0029 xHCI: add aborting command ring function
+
+Applying: xHCI: cancel command after command timeout
+error: patch failed: drivers/usb/host/xhci.h:1111
+error: drivers/usb/host/xhci.h: patch does not apply
+Patch failed at 0030 xHCI: cancel command after command timeout
 -- here --
+
+# Going to 3.0.50

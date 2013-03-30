@@ -258,7 +258,6 @@ error: patch failed: arch/arm/vfp/vfpmodule.c:575
 error: arch/arm/vfp/vfpmodule.c: patch does not apply
 Patch failed at 0001 ARM: 7566/1: vfp: fix save and restore when running on pre-VFPv3 and CONFIG_VFPv3 set
 
--- here --
 # Going to 3.0.58
 
 No hand patches
@@ -273,4 +272,25 @@ Patch failed at 0033 jbd2: fix assertion failure in jbd2_journal_flush()
 -> Remove Samsung patch for race condition, use linux-kernel solution
 
 # Going to 3.0.60
+
+No hand patches
+
+# Going to 3.0.61
+
+No hand patches
+
+# Going to 3.0.62
+
+No hand patches
+
+# Going to 3.0.63
+
+Applying: drm/radeon: Calling object_unrefer() when creating fb failure
+error: patch failed: drivers/gpu/drm/radeon/radeon_display.c:1158
+error: drivers/gpu/drm/radeon/radeon_display.c: patch does not apply
+Patch failed at 0003 drm/radeon: Calling object_unrefer() when creating fb failure
+
+-- here --
+
+# Going to 3.0.64
 

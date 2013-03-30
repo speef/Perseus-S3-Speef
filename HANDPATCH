@@ -294,3 +294,21 @@ Patch failed at 0003 drm/radeon: Calling object_unrefer() when creating fb failu
 
 # Going to 3.0.64
 
+No hand patches
+
+# Going to 3.0.65
+
+No hand patches
+
+# Going to 3.0.66
+
+No hand patches
+
+# Going to 3.0.67
+
+Applying: ext4: Free resources in some error path in ext4_fill_super
+error: patch failed: fs/ext4/super.c:3730
+error: fs/ext4/super.c: patch does not apply
+Patch failed at 0027 ext4: Free resources in some error path in ext4_fill_super
+
+-> removed some Samsung debug code in addition to linux-kernel patch

@@ -203,7 +203,6 @@ Applying: xHCI: cancel command after command timeout
 error: patch failed: drivers/usb/host/xhci.h:1111
 error: drivers/usb/host/xhci.h: patch does not apply
 Patch failed at 0030 xHCI: cancel command after command timeout
--- here --
 
 # Going to 3.0.50
 
@@ -214,4 +213,28 @@ Patch failed at 0004 genalloc: stop crashing the system when destroying a pool
 
 -> Bring genalloc.c up to 3.0.50 from wherever the hell it was (not 3.0.49!)
 -> xyzzy... this might break stuff. old version @genalloc.c.old
+
+# Going to 3.0.51
+
+No hand patches
+
+# Going to 3.0.52
+
+Applying: drm/i915: fixup infoframe support for sdvo
+error: patch failed: drivers/gpu/drm/i915/intel_drv.h:204
+error: drivers/gpu/drm/i915/intel_drv.h: patch does not apply
+Patch failed at 0034 drm/i915: fixup infoframe support for sdvo
+
+Applying: drm/i915: clear the entire sdvo infoframe buffer
+error: patch failed: drivers/gpu/drm/i915/intel_sdvo.c:868
+error: drivers/gpu/drm/i915/intel_sdvo.c: patch does not apply
+Patch failed at 0035 drm/i915: clear the entire sdvo infoframe buffer
+
+-> Pulling i915 over from 3.0.52; no mobile phone has a 10 year old Intel
+-> desktop video chipset, so I doubt anything depends on this
+
+-- here --
+
+
+# Going to 3.0.53
 

@@ -233,8 +233,32 @@ Patch failed at 0035 drm/i915: clear the entire sdvo infoframe buffer
 -> Pulling i915 over from 3.0.52; no mobile phone has a 10 year old Intel
 -> desktop video chipset, so I doubt anything depends on this
 
--- here --
-
-
 # Going to 3.0.53
+
+No hand patches
+
+# Going to 3.0.54
+
+No hand patches
+
+# Going to 3.0.55
+
+No hand patches
+
+# Going to 3.0.56
+
+No hand patches
+
+# Going to 3.0.57
+
+Applying: ARM: 7566/1: vfp: fix save and restore when running on pre-VFPv3 and CONFIG_VFPv3 set
+error: patch failed: arch/arm/include/asm/hwcap.h:18
+error: arch/arm/include/asm/hwcap.h: patch does not apply
+error: patch failed: arch/arm/vfp/vfpmodule.c:575
+error: arch/arm/vfp/vfpmodule.c: patch does not apply
+Patch failed at 0001 ARM: 7566/1: vfp: fix save and restore when running on pre-VFPv3 and CONFIG_VFPv3 set
+
+-- here --
+# Going to 3.0.58
+
 
